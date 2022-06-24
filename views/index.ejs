@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Love Cal</title>
+</head>
+<body onload="myFuc()">
+    <section class="sign-in">
+        <div class="main-page">
+            <div class="top-bar"></div>
+            <div class="title">
+                <h1>L<span class="text-danger">O</span>VE</h1>
+                <p>HTML, CSS, BootStrap, JQuery, Node, JavaScript, mongodb</p>
+                <!-- <h3 id="demo"><%=message%></h3> -->
+            </div>
+            <div class="form-btns">
+                <button class="s-btn">Sign In</button>
+                <button class="f-btn" onclick="">Sign In with Facebook</button>
+                <a href="#" id="new-btn">New Account?</a>
+            </div>
+            <div class="cancel">
+                <a href=""><i class="fas fa-times"></i></a>
+            </div>
+        </div>
+        <div class="sign-in-page">
+            <form action="/reg" method="POST">
+                <input type="email" name="email" placeholder="Email...">
+                <input type="password" name="password" placeholder="Password...">
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+        <div class="sign-up-page">
+            <form action="/register" method="POST">
+                <input type="text" name="fullname" placeholder="Fullname...">
+                <input type="email" name="email" placeholder="Email..." required>
+                <input type="password" name="password" placeholder="Password..." required>
+                <button type="submit">Sign up</button>
+            </form>
+        </div>
+    </section>
+    <div class="big-circle"></div>
+
+    <script type="text/javascript" src="/javaScript/jquery.js"></script>
+    <script>
+        $(document).on('click', '.s-btn', function() {
+            $('.sign-in').addClass('active-sign-in').siblings('.sign-in').removeClass('active-sign-up')
+        });
+
+        $(document).on('click', '#new-btn', function() {
+            $('.sign-in').addClass('active-sign-up').siblings('.sign-in').removeClass('active-sign-in')
+        })
+
+        $(document).ready(function() {
+            $('.cancel a').click(function() {
+                $('.sign-in').removeClass('active-sign-in , active-sign-up')
+            })
+        });
+
+        //     setTimeout(hideElement, 2000) //milliseconds until timeout//
+        // function hideElement() {
+            //      timeout.style.display = 'none'}
+        //     function myFuc() {
+        //     let text = document.getElementById('demo')
+        //     console.log('yesx')
+        //     setTimeout(() => {
+        //         text.style.display = 'none';
+        //     }, 2000);
+        // }
+    </script>
+</body>
+</html>
